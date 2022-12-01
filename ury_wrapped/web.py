@@ -3,10 +3,10 @@ import requests
 from io import BytesIO
 from werkzeug.exceptions import Unauthorized
 
-from config import cfg
-from tasks import TASKS
-import db
-from imaging import generate_image
+from ury_wrapped.config import cfg
+from ury_wrapped.tasks import TASKS
+import ury_wrapped.db as db
+from ury_wrapped.imaging import generate_image
 
 app = Flask(__name__)
 

@@ -1,5 +1,5 @@
 import psycopg2
-from config import cfg
+from ury_wrapped.config import cfg
 
 
 _conn: "psycopg2.connection" = None  # type: ignore
