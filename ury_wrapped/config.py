@@ -8,5 +8,7 @@ class Config(pydantic.BaseSettings):
     db_user: str
     db_password: pydantic.SecretStr
 
+    http_port: int = 8080
+
 
 cfg: Config = Config(_env_file=".env", _env_file_encoding="utf-8")  # type: ignore
