@@ -6,8 +6,9 @@
   </head>
   <body>
     <h1>URY Wrapped</h1>
+    <p><em>Tap and hold (or right-click) an image to download and share it.</em></p>
     {% for task in task_names %}
-      <img src="/img/{{ task }}" width="256" height="256" style="margin: 8px; border: 1px solid #333333">
+      <img src="{{ path_prefix }}/img/{{ task }}" width="384" height="384" style="margin: 8px; border: 1px solid #333333">
     {% endfor %}
   </body>
 </html>

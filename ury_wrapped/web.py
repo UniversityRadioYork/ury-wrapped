@@ -48,7 +48,9 @@ def index():
         memberid = memberid_from_request()
     except Unauthorized:
         return render_template("signin.html.j2")
-    return render_template("index.html.j2", task_names=[t[0] for t in TASKS])
+    return render_template(
+        "index.html.j2", task_names=[t[0] for t in TASKS], path_prefix=cfg.path_prefix
+    )
 
 
 if __name__ == "__main__":
