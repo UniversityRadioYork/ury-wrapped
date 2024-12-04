@@ -15,7 +15,7 @@ TASKS: List[Task] = [
           select show_season_timeslot_id
           from sis2.member_signin
           where memberid = %s
-            and sign_time >= '2023-01-01'
+            and sign_time >= '2024-01-01'
         ),
           tracks as (
               select coalesce(rt.title, tn.track) || ' - ' || coalesce(rt.artist, tn.artist) as title
@@ -40,7 +40,7 @@ TASKS: List[Task] = [
           from sis2.member_signin si
                   inner join schedule.show_season_timeslot ts using (show_season_timeslot_id)
           where si.memberid = %s
-            and si.sign_time >= '2023-01-01'
+            and si.sign_time >= '2024-01-01'
       )
       select count(timeslots), sum(timeslots.duration) as duration
       from timeslots
@@ -54,7 +54,7 @@ TASKS: List[Task] = [
             select show_season_timeslot_id
             from sis2.member_signin
             where memberid = %s
-              and sign_time >= '2023-01-01'
+              and sign_time >= '2024-01-01'
         ),
             tracks as (
                 select coalesce(rt.artist, tn.artist) as artist
@@ -79,7 +79,7 @@ TASKS: List[Task] = [
           from sis2.member_signin si
                   inner join schedule.show_season_timeslot ts using (show_season_timeslot_id)
           where si.memberid = %s
-            and si.sign_time >= '2023-01-01'
+            and si.sign_time >= '2024-01-01'
         )
         select sum(l.time_end - l.time_start) as listeners_time_wasted
         from listens.listen l
@@ -97,7 +97,7 @@ TASKS: List[Task] = [
         select show_season_timeslot_id
         from sis2.member_signin
         where memberid = %s
-          and sign_time >= '2023-01-01'
+          and sign_time >= '2024-01-01'
       )
       select coalesce(rt.title, tn.track) as track, coalesce(rt.artist, tn.artist) as artist
       from tracklist.tracklist
@@ -115,7 +115,7 @@ TASKS: List[Task] = [
         select show_season_timeslot_id
         from sis2.member_signin
         where memberid = %s
-          and sign_time >= '2023-01-01'
+          and sign_time >= '2024-01-01'
       ),
         tracks as (
             select coalesce(rt.title, tn.track) || ' - ' || coalesce(rt.artist, tn.artist) as title
