@@ -88,7 +88,7 @@ TASKS: List[Task] = [
                               l.time_end between ts.start_time - '10 minutes'::interval and ts.start_time + ts.duration + '10 minutes'::interval
         where l.time_end - l.time_start < '12 hours'::interval
         """,
-        lambda total: f"People wasted {total[0].days*24 + total[0].seconds//3600} hours of their lives listening to you this year.",
+        lambda total: f"People spent {total[0].days*24 + total[0].seconds//3600} hours of their lives listening to you this year.",
     ),
     Task(
         "first_song",
